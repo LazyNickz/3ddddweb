@@ -2,6 +2,8 @@
 
 A web project featuring 3D integration and interactive components.
 
+cute-squirrel-1a3bcd.netlify.app
+
 ## Project Structure
 
 - `index.html` - Main HTML file
