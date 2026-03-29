@@ -1,0 +1,32 @@
+# Local Netlify folder
+.netlify
+
+# OS files
+.DS_Store
+.DS_Store?
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Zip files
+*.zip

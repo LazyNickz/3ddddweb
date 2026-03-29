@@ -1,0 +1,414 @@
+# 🎨 Brand Design System & Color Palette Guideline
+
+> Reverse-engineered from **Nickel** — a fintech/payments SaaS homepage
+
+---
+
+## 1. Brand Identity
+
+| Attribute | Value |
+|---|---|
+| **Brand Name** | Nickel |
+| **Industry** | Fintech / B2B Payments |
+| **Tone** | Professional yet playful, approachable, modern |
+| **Personality** | Confident, innovative, human-friendly |
+| **Logo Style** | Geometric circle mark + clean lowercase wordmark |
+
+### Logo Specifications
+- **Mark**: Solid orange filled circle (acts as the "O" brand element)
+- **Wordmark**: Lowercase sans-serif "nickel" — clean, geometric letterforms
+- **Logo Color**: Primary Orange `#E8611A` on white background
+- **Minimum Clear Space**: Equal to the height of the circle mark on all sides
+
+---
+
+## 2. Color Palette
+
+### Primary Colors
+
+| Swatch | Name | Hex | RGB | Usage |
+|---|---|---|---|---|
+| 🟠 | **Primary Orange** | `#E8611A` | `rgb(232, 97, 26)` | Logo, brand accents, icon highlights |
+| 🔴 | **Accent Coral-Red** | `#E94E35` | `rgb(233, 78, 53)` | Primary CTA buttons, hover states |
+| ⬛ | **Rich Black** | `#1A1A1A` | `rgb(26, 26, 26)` | Headlines, primary text |
+
+### Neutral Colors
+
+| Swatch | Name | Hex | RGB | Usage |
+|---|---|---|---|---|
+| ⬜ | **Pure White** | `#FFFFFF` | `rgb(255, 255, 255)` | Page background, card backgrounds |
+| 🔘 | **Warm Gray BG** | `#F5F3F0` | `rgb(245, 243, 240)` | Section backgrounds, subtle separation |
+| 🔘 | **Light Gray** | `#E8E5E1` | `rgb(232, 229, 225)` | Borders, dividers, subtle UI elements |
+| 🔘 | **Medium Gray** | `#6B6B6B` | `rgb(107, 107, 107)` | Body text, secondary text |
+| 🔘 | **Dark Gray** | `#333333` | `rgb(51, 51, 51)` | Navigation text, sub-headings |
+
+### 3D Illustration Palette (Extended)
+
+| Swatch | Name | Hex | Usage |
+|---|---|---|---|
+| 🟡 | **Matte Yellow-Orange** | `#F2922B` | 3D model body, warm surfaces |
+| 🟠 | **Deep Orange** | `#D4561A` | 3D shadows, depth areas |
+| 🔴 | **Glossy Red** | `#CC3326` | 3D accent parts (buttons, phone receiver) |
+| ⚪ | **Warm Cream** | `#F0E8DD` | 3D keyboard keys, light plastic surfaces |
+| ⬛ | **Screen Dark** | `#2B2B2B` | CRT screen background, terminal display |
+| 🟢 | **Terminal Green** | `#7FCC7F` | Terminal text on screens |
+
+### Gradient Usage
+- **Hero Background**: Subtle warm-to-neutral gradient — `#FFFFFF` → `#F5F3F0` (top to bottom)
+- **CTA Hover**: `#E94E35` → `#D43E28` (darken 10% on hover)
+- **No heavy gradients** — the brand aesthetic is flat and clean
+
+---
+
+## 3. Typography
+
+### Font Stack
+
+| Role | Font Family | Fallback | Weight | Style |
+|---|---|---|---|---|
+| **Headings** | `"Inter"` or `"Outfit"` | `system-ui, -apple-system, sans-serif` | 700 (Bold) | Normal |
+| **Body** | `"Inter"` | `system-ui, -apple-system, sans-serif` | 400 (Regular) | Normal |
+| **Navigation** | `"Inter"` | `system-ui, -apple-system, sans-serif` | 500 (Medium) | Normal |
+| **Buttons** | `"Inter"` | `system-ui, -apple-system, sans-serif` | 600 (Semi-bold) | Normal |
+
+### Type Scale
+
+| Element | Size | Line Height | Letter Spacing | Weight | Color |
+|---|---|---|---|---|---|
+| **H1 (Hero)** | `56px` / `3.5rem` | `1.1` | `-0.02em` | 700 | `#1A1A1A` |
+| **H2 (Section)** | `40px` / `2.5rem` | `1.15` | `-0.01em` | 700 | `#1A1A1A` |
+| **H3 (Sub-section)** | `28px` / `1.75rem` | `1.2` | `0` | 600 | `#1A1A1A` |
+| **Body Large** | `18px` / `1.125rem` | `1.6` | `0` | 400 | `#6B6B6B` |
+| **Body Regular** | `16px` / `1rem` | `1.5` | `0` | 400 | `#6B6B6B` |
+| **Nav Links** | `15px` / `0.9375rem` | `1` | `0` | 500 | `#333333` |
+| **Button Text** | `15px` / `0.9375rem` | `1` | `0.01em` | 600 | `#FFFFFF` / `#333333` |
+| **Caption** | `13px` / `0.8125rem` | `1.4` | `0.02em` | 400 | `#6B6B6B` |
+
+### Key Typography Rules
+- Hero headline uses **short, punchy sentences** with line breaks for visual rhythm
+- Body copy under hero is kept to **2 lines maximum** — concise and scannable
+- **No ALL-CAPS** in primary UI (exception: very small labels/badges)
+- Heading text is always **Rich Black** `#1A1A1A`, never pure `#000000`
+
+---
+
+## 4. Spacing & Layout
+
+### Spacing Scale (8px Base Unit)
+
+| Token | Value | Usage |
+|---|---|---|
+| `--space-xs` | `4px` | Tight inline spacing |
+| `--space-sm` | `8px` | Icon gaps, tight padding |
+| `--space-md` | `16px` | Component internal padding |
+| `--space-lg` | `24px` | Section padding, card padding |
+| `--space-xl` | `32px` | Between components |
+| `--space-2xl` | `48px` | Between sections |
+| `--space-3xl` | `64px` | Major section margins |
+| `--space-4xl` | `96px` | Hero vertical padding |
+| `--space-5xl` | `128px` | Page-level spacing |
+
+### Layout Grid
+- **Container Max Width**: `1200px`
+- **Side Padding**: `24px` (mobile) / `48px` (tablet) / `64px` (desktop)
+- **Hero Layout**: 2-column asymmetric — **55% text / 45% illustration**
+- **Navigation Height**: `72px`
+- **Grid System**: 12-column with `24px` gutters
+
+### Content Alignment
+- Text content is **left-aligned** (no centered hero text)
+- CTA buttons are **left-aligned** under the hero copy
+- Navigation is **justified** — logo left, links center, CTA right
+
+---
+
+## 5. Component Styles
+
+### Buttons
+
+#### Primary CTA Button
+```css
+.btn-primary {
+  background-color: #E94E35;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+  background-color: #D43E28;
+  transform: translateY(-1px);
+}
+```
+
+#### Secondary Button (Ghost/Outline)
+```css
+.btn-secondary {
+  background-color: transparent;
+  color: #333333;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1.5px solid #E8E5E1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: #333333;
+  background-color: #F5F3F0;
+}
+```
+
+#### Navigation CTA (Small)
+```css
+.btn-nav-cta {
+  background-color: #E94E35;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+}
+```
+
+### Navigation Bar
+```css
+.navbar {
+  height: 72px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F5F3F0;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+}
+```
+
+### Cards
+```css
+.card {
+  background: #FFFFFF;
+  border: 1px solid #E8E5E1;
+  border-radius: 12px;
+  padding: 32px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+```
+
+---
+
+## 6. 3D Illustration Art Direction
+
+### Style Definition
+| Attribute | Description |
+|---|---|
+| **Render Style** | Matte / semi-glossy 3D with soft shadows |
+| **Aesthetic** | Retro-futuristic — vintage CRT computers, rotary phones, and tech objects reimagined in vibrant modern colors |
+| **Color Treatment** | Monochromatic orange with red and cream accents |
+| **Lighting** | Soft, diffused studio lighting from upper-left — no harsh shadows |
+| **Background** | Always on clean white/off-white — objects float without a ground plane |
+| **Material Finish** | Matte plastic with subtle specularity on edges |
+| **Playful Elements** | Smiley faces, stickers ("IGNORE"), cursor icons, terminal text |
+| **Perspective** | Slightly elevated 3/4 view, gentle rotation |
+
+### Art Direction Prompt (for 3D generation)
+> "A retro-futuristic 3D robot made from a vintage CRT computer monitor and rotary phone parts. The robot is primarily matte orange and yellow-orange with red accent pieces. It has a dark screen displaying green terminal text. The body incorporates keyboard keys in warm cream color. Include playful details like stickers, a smiley face, and a cursor icon. Render with soft studio lighting on a clean white background. Semi-glossy matte plastic material. 3/4 perspective view."
+
+---
+
+## 7. Interaction & Animation Principles
+
+| Effect | Duration | Easing | Usage |
+|---|---|---|---|
+| **Button Hover** | `200ms` | `ease` | Color shift + subtle lift (`translateY(-1px)`) |
+| **Card Hover** | `300ms` | `ease` | Shadow expansion + lift (`translateY(-2px)`) |
+| **Page Transitions** | `400ms` | `ease-in-out` | Fade + slide-up on scroll-reveal |
+| **Nav Dropdown** | `200ms` | `ease-out` | Fade-in + slide-down |
+| **Link Hover** | `150ms` | `ease` | Color shift to Primary Orange |
+| **3D Element** | `continuous` | `ease-in-out` | Subtle floating animation (if animated) |
+
+### Micro-interaction Guidelines
+- Buttons should have **tactile feedback** — slight scale or lift on hover
+- Links in nav should transition color smoothly to `#E8611A` on hover
+- Dropdowns indicated by chevron `▾` that rotates `180°` on open
+- Scroll-triggered animations use **fade-up** with `30px` offset
+
+---
+
+## 8. Iconography & Visual Elements
+
+| Element | Style |
+|---|---|
+| **Icons** | Outlined or filled, 2px stroke, rounded joins |
+| **Icon Size** | 20px (inline), 24px (nav), 48px (feature cards) |
+| **Dropdown Indicator** | Small chevron `▾` — `10px`, `#6B6B6B` |
+| **Dividers** | 1px solid `#E8E5E1` — used sparingly |
+| **Badges** | Small rounded-pill, `#F5F3F0` background, `#333333` text |
+
+---
+
+## 9. Responsive Breakpoints
+
+| Breakpoint | Width | Behavior |
+|---|---|---|
+| **Mobile** | `< 640px` | Single column, stacked hero, hamburger nav |
+| **Tablet** | `640px – 1024px` | 2 columns, compact spacing |
+| **Desktop** | `1024px – 1440px` | Full layout, 12-col grid |
+| **Wide** | `> 1440px` | Max-width container centered, no stretch |
+
+---
+
+## 10. Do's and Don'ts
+
+### ✅ Do
+- Use generous whitespace — let elements breathe
+- Keep CTAs visually prominent with the coral-red color
+- Use the warm gray `#F5F3F0` for alternating section backgrounds
+- Pair bold headlines with lightweight body copy for contrast
+- Use 3D illustrations as hero focal points — they are the "wow" factor
+- Left-align hero content for a professional, editorial feel
+
+### ❌ Don't
+- Don't use pure black `#000000` for text — always use `#1A1A1A`
+- Don't center-align hero text — this brand is left-aligned editorial style
+- Don't use gradients on buttons — flat color with hover transitions
+- Don't overcrowd sections — this design thrives on minimalism
+- Don't use more than 2 typefaces
+- Don't place text over 3D illustrations — they occupy separate visual lanes
+
+---
+
+## 11. LLM Agent Prompt (Ready to Feed)
+
+Copy the prompt below and feed it to your LLM agent to reproduce this design system:
+
+---
+
+```
+You are building a modern fintech SaaS landing page. Follow this brand design system exactly:
+
+**COLOR PALETTE:**
+- Primary Orange: #E8611A (logo, accents, link hovers)
+- CTA Coral-Red: #E94E35 (primary buttons, CTAs)
+- Rich Black: #1A1A1A (headlines — never use pure #000)
+- Medium Gray: #6B6B6B (body text, descriptions)
+- Dark Gray: #333333 (nav text, sub-headings)
+- Warm Gray Background: #F5F3F0 (alternate sections)
+- Light Gray Border: #E8E5E1 (borders, dividers, outline buttons)
+- White: #FFFFFF (primary background, cards)
+
+**TYPOGRAPHY:**
+- Font: "Inter" from Google Fonts (fallback: system-ui, sans-serif)
+- H1: 56px, bold (700), line-height 1.1, letter-spacing -0.02em, color #1A1A1A
+- H2: 40px, bold (700), line-height 1.15
+- Body: 18px, regular (400), line-height 1.6, color #6B6B6B
+- Nav: 15px, medium (500), color #333333
+- Buttons: 15px, semi-bold (600)
+
+**LAYOUT:**
+- Max container width: 1200px, centered
+- Hero section: 2-column asymmetric layout (55% text left, 45% visual right)
+- Text is LEFT-ALIGNED, not centered
+- Generous whitespace between sections (64-96px)
+- Navigation: sticky, 72px height, glassmorphism (backdrop-blur + semi-transparent white)
+
+**BUTTONS:**
+- Primary: #E94E35 background, white text, 8px border-radius, 14px 28px padding
+- Secondary: transparent background, #333333 text, 1.5px #E8E5E1 border, 8px border-radius
+- Hover: darken primary to #D43E28, subtle translateY(-1px) lift
+- Nav CTA: smaller version of primary button
+
+**COMPONENTS:**
+- Cards: white background, 1px #E8E5E1 border, 12px border-radius, hover shadow + lift
+- Navigation: logo left, links with dropdowns in center, login + CTA right
+- Dropdown indicators: small chevrons that rotate on open
+
+**ANIMATIONS:**
+- All transitions: 200-300ms ease
+- Buttons: color + subtle lift on hover
+- Cards: shadow expansion + 2px lift on hover
+- Scroll: fade-up reveal with 30px offset
+- Links: smooth color transition to #E8611A on hover
+
+**DESIGN PRINCIPLES:**
+- Clean, minimal, lots of whitespace
+- Professional but playful (the 3D illustrations add personality)
+- Warm neutral tones — never cold blues or grays
+- Editorial left-aligned typography, not centered
+- Section backgrounds alternate between #FFFFFF and #F5F3F0
+- Flat design for UI elements — no gradients on buttons
+```
+
+---
+
+## 12. CSS Variables (Quick Reference)
+
+```css
+:root {
+  /* Colors */
+  --color-primary: #E8611A;
+  --color-cta: #E94E35;
+  --color-cta-hover: #D43E28;
+  --color-black: #1A1A1A;
+  --color-dark-gray: #333333;
+  --color-medium-gray: #6B6B6B;
+  --color-light-gray: #E8E5E1;
+  --color-warm-bg: #F5F3F0;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 1.75rem;
+  --font-size-body-lg: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-nav: 0.9375rem;
+  --font-size-caption: 0.8125rem;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --nav-height: 72px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-page: 400ms ease-in-out;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+```

@@ -1,0 +1,139 @@
+
+
+  <!-- ===================== NAV ===================== -->
+  <header id="site-header">
+    <a href="#" class="logo" id="logo">
+      <span class="logo-dot"></span> LAZYWORKZ
+    </a>
+
+    <nav id="main-nav">
+      <a href="#projects" class="nav-link">PROJECTS</a>
+      <a href="#blog" class="nav-link">BLOG</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#resume" class="nav-link">RESUME</a>
+    </nav>
+
+    <a href="#contact" class="hire-btn" id="hire-btn">
+      // HIRE ME
+      <span class="hire-circle">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main id="hero">
+    <!-- Big headline -->
+    <div class="hero-headline" id="hero-headline">
+      <h1>
+        <span class="line line-1" data-text="CREATIVE">CREATIVE</span>
+        <span class="line line-2" data-text="PORTFOLIO">PORTFOLIO</span>
+        <span class="line line-3" data-text="GALLERY">GALLERY</span>
+      </h1>
+    </div>
+
+    <!--
+      ==========================================
+      3D SPLINE SCENE — Robot Hand
+      ==========================================
+      Loaded via @splinetool/runtime (vanilla JS).
+      Interactive — pointer events enabled.
+    -->
+    <div class="hero-3d-container" id="sphere-container" style="transform: perspective(1400px) rotateY(0deg) rotateX(0deg);">
+      <!-- Loading skeleton -->
+      <div class="spline-loader hidden" id="spline-loader">
+        <div class="spline-spinner"></div>
+        <span class="spline-loader-text">LOADING 3D</span>
+      </div>
+      <!-- Spline canvas -->
+      <canvas id="spline-canvas" width="800" height="600" style="display: block; width: 100%; height: 100%;" class="loaded"></canvas>
+    </div>
+
+    <!-- Side blurb -->
+    <div class="hero-blurb right-blurb" id="hero-blurb-right">
+      <span class="blurb-prefix">//</span>
+      <span class="blurb-text">DESIGN THAT<br>SPEAKS YOUR<br>BRAND</span>
+    </div>
+
+    <!-- Bio text -->
+    <div class="hero-bio" id="hero-bio">
+      <span class="bio-prefix">// LAZYWORKZ —</span> A CREATIVE STUDIO &amp; PORTFOLIO SHOWCASING
+      BOLD DESIGN, DIGITAL PRODUCTS, AND FORWARD-THINKING CREATIVE WORK.
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </main>
+
+  <!-- ===================== TRUSTED BY ===================== -->
+  <section class="trusted-section" id="trusted-section" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);">
+    <div class="trusted-inner">
+      <p class="trusted-label">TRUSTED BY FORWARD THINKING TEAMS</p>
+      <div class="trusted-logos" id="trusted-logos">
+        <!-- Placeholder slots for future logos -->
+        <span class="logo-slot" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);"></span>
+        <span class="logo-slot" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.08s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);"></span>
+        <span class="logo-slot" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.16s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);"></span>
+        <span class="logo-slot" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.24s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);"></span>
+        <span class="logo-slot" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.32s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spline 3D Runtime -->
+  <script type="module">
+    import { Application } from 'https://esm.sh/@splinetool/runtime';
+
+    const canvas = document.getElementById('spline-canvas');
+    const loader = document.getElementById('spline-loader');
+    const container = document.getElementById('sphere-container');
+
+    // ── Block ONLY zoom/scroll/drag — let mousemove pass through to Spline ──
+    // We block: wheel (2-finger scroll), touch gesture, pointerdown (camera drag)
+    // We ALLOW: pointermove / mousemove — Spline needs these for cursor tracking
+
+    const blockScroll = (e) => { e.preventDefault(); e.stopPropagation(); };
+
+    // Block 2-finger trackpad scroll on the whole window when over canvas
+    window.addEventListener('wheel', (e) => {
+      e.preventDefault();
+    }, { passive: false, capture: true });
+
+    // Block touch & drag on canvas/container
+    [canvas, container].forEach(el => {
+      if (!el) return;
+      el.addEventListener('wheel',      blockScroll, { passive: false, capture: true });
+      el.addEventListener('touchmove',  blockScroll, { passive: false, capture: true });
+      el.addEventListener('touchstart', blockScroll, { passive: false, capture: true });
+      // Block camera drag (pointerdown starts a drag orbit in Spline)
+      el.addEventListener('pointerdown', (e) => e.stopPropagation(), { capture: true });
+    });
+
+    const spline = new Application(canvas);
+
+    spline.load('https://prod.spline.design/Mo5yLxqi3XmOMwGw/scene.splinecode')
+      .then(() => {
+        console.log('🤖 Spline robot hand loaded');
+        if (loader) loader.classList.add('hidden');
+        canvas.classList.add('loaded');
+      })
+      .catch((err) => {
+        console.error('Spline load error:', err);
+        if (loader) loader.classList.add('hidden');
+      });
+  </script>
+  <script src="script.js"></script>
+
+
+
+<div class="cursor-glow" style="left: -0.0315034px; top: -0.0315034px;"></div>
